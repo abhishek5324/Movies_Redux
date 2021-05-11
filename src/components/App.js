@@ -3,6 +3,7 @@ import Navbar from './Navbar.js';
 import MovieCard from './MovieCard.js';
 import '../index.css';
 import { Component } from 'react';
+import {addMovies} from '../actions';
 
 class App extends Component {
 
@@ -16,10 +17,7 @@ componentDidMount(){
 
   //make api call
   //dispatch action 
- store.dispatch({
-    type:'ADD_MOVIES',
-    movies: data
-  })
+ store.dispatch(addMovies(data));
 
   console.log("STATE",store.getState());
 }
